@@ -18,7 +18,7 @@ function findContiguous(input, target) {
     if (currentSum === target) return currentSum;
 
     let j = i + 1;
-    while (currentSum < target) {
+    while (currentSum < target && j < input.length) {
       currentSum += input[j];
       j++;
     }
