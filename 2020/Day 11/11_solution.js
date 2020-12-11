@@ -75,13 +75,7 @@ function countOccupiedLOS(map, [seatX, seatY]) {
 }
 
 function countOccupiedSeats(map) {
-  let result = 0;
-
-  for (let i = 0; i < map.length; i++) {
-    result += (map[i].match(/#/g) || []).length;
-  }
-
-  return result;
+  return map.reduce((sum, cur) => sum + (cur.match(/#/g) || []).length, 0);
 }
 
 function applyRules(map, [seatX, seatY]) {
